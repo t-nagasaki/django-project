@@ -76,6 +76,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'grappelli',
     'django.contrib.admin',
+    'blog',
 ]
 
 # A sample logging configuration. The only tangible logging
