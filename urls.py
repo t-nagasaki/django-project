@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+from blog import views
 
 urlpatterns = [
     # Examples:
@@ -9,6 +10,7 @@ urlpatterns = [
 
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(R'^blog/(?P<pk>[0-9]+)/$', views.DetailView.as_view(),name='blog_detail'),
 ]
 
 if settings.DEBUG:

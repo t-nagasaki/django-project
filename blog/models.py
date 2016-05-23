@@ -9,6 +9,9 @@ class User(models.Model):
     name = models.CharField(max_length=32)
     mail = models.EmailField()
 
+    def __unicode__(self):
+        return self.name
+
 
 class Entry(models.Model):
     STATUS_DRAFT = "draft"
@@ -25,3 +28,5 @@ class Entry(models.Model):
         choices=STATUS_SET, default=STATUS_DRAFT, max_length=8)
     author = models.ForeignKey(User, related_name='entries')
 
+    def __unicode__(self):
+        return self.title
